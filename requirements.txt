@@ -1,0 +1,12 @@
+django==3.2.6
+djangorestframework==3.12.4
+django_cors_headers==3.2.1
+psycopg2-binary==2.9.1
+pyyaml==5.4.1
+django-filter==2.4.0
+coreapi==2.3.3
+markdown==3.3.4
+django-modeltranslation==0.17.3
+django-mptt==0.13.3
+celery==5.2.0
+pillow==8.4.0
