@@ -101,7 +101,7 @@ class Command(BaseCommand):
                 'OS:',
                 self.get_os()
             )
-            Site.objects.filter(hostname=p.netloc).update(
+            Site.objects.filter(pk=site.pk).update(
                 os_version=self.get_os(),
                 php_version=self.get_php_version(),
                 web_server_version=self.get_webserver(),
