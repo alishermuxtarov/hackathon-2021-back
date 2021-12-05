@@ -7,28 +7,6 @@ from .create_sites import execute
 
 ALLOWED_PORTS = ['25', '80', '443', '53', '953']
 
-RESULT = '''
-Starting Nmap 7.70 ( https://nmap.org ) at 2021-12-05 13:59 +05
-Nmap scan report for www.tashkent.uz (213.230.91.84)
-Host is up (0.0022s latency).
-rDNS record for 213.230.91.84: mail.tashkent.uz
-Not shown: 924 filtered ports, 65 closed ports
-PORT     STATE SERVICE
-21/tcp   open  ftp
-25/tcp   open  smtp
-80/tcp   open  http
-110/tcp  open  pop3
-143/tcp  open  imap
-443/tcp  open  https
-465/tcp  open  smtps
-993/tcp  open  imaps
-995/tcp  open  pop3s
-7025/tcp open  vmsvc-2
-8443/tcp open  https-alt
-
-Nmap done: 1 IP address (1 host up) scanned in 47.21 seconds
-'''
-
 
 class Command(BaseCommand):
     def handle(self, *args, **options):

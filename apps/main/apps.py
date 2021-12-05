@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class MainConfig(AppConfig):
     name = 'main'
-    verbose_name = 'Картинг'
+    verbose_name = 'Security Audit'
