@@ -49,7 +49,12 @@ class SiteABTestAdmin(admin.ModelAdmin):
         'waiting_time_avg',
         'total_time_min',
     ]
-    list_display = ['site', 'concurrency_level', 'time_taken']
+    list_display = [
+        'site',
+        'requests_per_second',
+        'concurrency_level',
+        'time_taken'
+    ]
     list_display_links = ['site']
     ordering = ['id']
 
