@@ -47,7 +47,7 @@ class Command(BaseCommand):
             p = urlparse(site)
             is_available = system(f'curl -s {site} > /dev/null') == 0
             site_map_url = f'https://{p.netloc}/sitemap.xml'
-            g.go(site_map_url)
+            g.go(site_map_url, follow_location=False)
             has_sitemap_xml = g.doc.code == 200
 
             g.go(site)
