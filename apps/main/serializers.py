@@ -112,6 +112,7 @@ class SiteListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Site
         fields = [
+            'id',
             'title',
             'hostname',
             'protocol',
