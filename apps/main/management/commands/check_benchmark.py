@@ -7,15 +7,12 @@ from .create_sites import execute
 
 
 class Command(BaseCommand):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.headers = None
-
     def handle(self, *args, **options):
         for site in Site.objects.all():
+            if SiteABTest.objects.filter(site=site).exists():
+                continue
             try:
                 results = self.get_results(site.homepage_url)
-                print(results)
                 if results:
                     SiteABTest.objects.create(site=site, **results)
             except Exception as msg:
@@ -30,16 +27,15 @@ class Command(BaseCommand):
         result = '\n'.join(res[1])
 
         def get(key):
-            return result.split(key + ':')[1].split()[0].strip()  # .split('.', ',')
+            return result.split(key + ':')[1].split()[0].strip()
 
         def get_times(key, index):
-            # print(result.split(key + ':')[1].split())
             d = [s for s in result.split('\n') if key in s][-1]
-            return d.split(key + ':')[1].split()[index].strip()  # .split('.', ',')
+            return d.split(key + ':')[1].split()[index].strip()
 
         def get_across_all():
             d = [s for s in result.split('\n') if 'Time per request:' in s][-1]
-            return d.split(':')[1].split()[0].strip()  # .split('.', ',')
+            return d.split(':')[1].split()[0].strip()
 
         return dict(
             results_text=result,
