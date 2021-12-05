@@ -83,7 +83,7 @@ class SiteAdmin(admin.ModelAdmin):
         'total_links_count',
         'broken_links_count',
     ]
-    list_display_links = ['title']
-    list_display = ['title', 'hostname']
+    list_display_links = ['id']
+    list_display = ['id', 'title', 'hostname']
     ordering = ['id']
     inlines = [SiteVulnerabilitiesInline, SiteBrokenLinkInline, SiteOpenPortInline]

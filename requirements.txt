@@ -10,3 +10,5 @@ django-modeltranslation==0.17.3
 django-mptt==0.13.3
 celery==5.2.0
 pillow==8.4.0
+grab
+ipython
