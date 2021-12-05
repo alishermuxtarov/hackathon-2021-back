@@ -50,6 +50,7 @@ class SiteABTestAdmin(admin.ModelAdmin):
         'total_time_min',
     ]
     list_display = [
+        'site_id',
         'site',
         'requests_per_second',
         'concurrency_level',
